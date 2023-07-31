@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+
 import Feedback from '../components/Feedback/Feedback';
 
 
