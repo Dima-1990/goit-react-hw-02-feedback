@@ -3,7 +3,7 @@ import { FitSection} from '../Feedback/Feedback.css';
 
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
-import Notification from './Notification'; // Додали імпорт компонента
+import Notification from './Notification'; 
 
 export default class Feedback extends Component {
   state = {
@@ -45,7 +45,7 @@ export default class Feedback extends Component {
           onLeaveFeedback={this.handleBtnClick}
         />
 
-        {total === 0 ? ( // Використовуємо компонент <Notification>
+        {total === 0 ? (
           <Notification message="There is no feedback" />
         ) : (
          

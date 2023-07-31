@@ -14,5 +14,6 @@ export const Btn = styled.button`
   font-size: 18px;
   border-radius: 8px;
   border: 1px solid red;
+  
 `;
 
