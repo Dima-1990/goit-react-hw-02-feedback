@@ -38,7 +38,7 @@ export default class Feedback extends Component {
 
     return (
       <FitSection>
-        <h2>Будь ласка, залиште відгук</h2>
+        <h2>Please leave a feedback</h2>
 
         <FeedbackOptions
           options={['good', 'neutral', 'bad']}
