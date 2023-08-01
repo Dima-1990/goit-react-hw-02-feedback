@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { FitSection} from '../Feedback/Feedback.css';
+import PropTypes from 'prop-types';
+
 
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
@@ -62,3 +64,10 @@ export default class Feedback extends Component {
     );
   }
 }
+
+
+Feedback.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+};
