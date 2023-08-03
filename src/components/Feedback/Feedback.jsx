@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { FitSection} from '../Feedback/Feedback.css';
 import PropTypes from 'prop-types';
-
-
+import Section from './Section';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
-import Notification from './Notification'; 
+import Notification from './Notification';
 
 export default class Feedback extends Component {
   state = {
@@ -39,32 +37,27 @@ export default class Feedback extends Component {
     const positiveFeedback = this.countPositiveFeedbackPercentage();
 
     return (
-      <FitSection>
-        <h2>Please leave a feedback</h2>
-
+      <Section title="Please leave a feedback">
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={Object.keys(this.state)}
           onLeaveFeedback={this.handleBtnClick}
         />
 
         {total === 0 ? (
           <Notification message="There is no feedback" />
         ) : (
-         
-            <Statistics
-              good={good}
-              neutral={neutral}
-              bad={bad}
-              total={total}
-              positivePercentage={positiveFeedback.toFixed(0)}
-            />
-         
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={total}
+            positivePercentage={Math.round(positiveFeedback)}
+          />
         )}
-      </FitSection>
+      </Section>
     );
   }
 }
-
 
 Feedback.propTypes = {
   good: PropTypes.number.isRequired,
